@@ -1,10 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bàn Cờ Vua</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+    .chessboard {
+      display: grid;
+      grid-template-columns: repeat(8, 50px);
+      grid-template-rows: repeat(8, 50px);
+      border: 5px solid #333;
+    }
+    .chessboard div {
+      width: 50px;
+      height: 50px;
+    }
+    .white {
+      background-color: #fff;
+    }
+    .black {
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+<div class="chessboard">
+  <!-- Tạo ô bàn cờ -->
+  <script>
+    const chessboard = document.querySelector('.chessboard');
+    for (let row = 0; row < 8; row++) {
+      for (let col = 0; col < 8; col++) {
+        const square = document.createElement('div');
+        // Tính màu ô dựa trên vị trí hàng và cột
+        if ((row + col) % 2 === 0) {
+          square.className = 'white';
+        } else {
+          square.className = 'black';
+        }
+        chessboard.appendChild(square);
+      }
+    }
+  </script>
+</div>
+</body>
+</html>
+
+</table>
+
 </body>
 </html>

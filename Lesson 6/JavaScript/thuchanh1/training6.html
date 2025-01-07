@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="demo" onclick="criticalmessage()">Corner me</p>
+<p id="demo1" onclick="showmessage()">Take me out</p>
+<p id="demo2" onclick="givemessage()">Good work!</p>
+<p id="demo3" onclick="readmessage()">relation</p>
+<script>
+  function criticalmessage() {
+    alert("Hello World!");
+  }
+  function showmessage() {
+    document.getElementById("demo1").innerHTML = "Hello there!";
+  }
+  function givemessage() {
+    document.write("Nice job!");
+  }
+  function readmessage() {
+    console.log("Hello World!");
+  }
+</script>
+</body>
+</html>

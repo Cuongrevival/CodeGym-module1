@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p onclick = "do_something()">Click me if you dare</p>
+<p id ="demo">Click me if you like me</p>
+</body>
+</html>
+<script>
+  function do_something() {
+    alert("You are fired");
+  }
+  var demo=document.getElementById("demo");
+  demo.addEventListener("click",clickFunction);
+  function clickFunction() {
+    alert("Your salary will rise by 2 times");
+  }
+</script>

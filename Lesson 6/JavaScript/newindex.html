@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p onchange="do_something()">Select a new number from 1 to 4</p>
+<select id="MySelect">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+</select>
+</body>
+</html>
+<script>
+ function do_something() {
+   var mySelect = document.getElementById("MySelect");
+   mySelect.addEventListener("change", onchange);
+ }
+  var SelectedChoice = document.getElementById("MySelect")
+  SelectedChoice.addEventListener("change",changeFunction)
+  function changeFunction(){
+    var SelectedValue = document.getElementById("MySelect").value;
+    alert(SelectedValue);
+  }
+</script>
