@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký Học Viên</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: #ffffcc;
+            width: 400px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-header {
+            background-color: #ccffcc;
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group .gender {
+            display: flex;
+            gap: 10px;
+        }
+
+        .form-group .gender input {
+            width: auto;
+        }
+
+        .form-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form-buttons button {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-buttons button.register {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        .form-buttons button.reset {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<div class="form-container">
+<div class =form-header>Đăng ký học viên</div>
+<br>
+<form action="#"method="post"></form>
+<div class="form-group">Họ và tên
+    <input type="text" id="name" name="name" required>
+</div>
+
+<br>
+<div class="form-group">Ngày sinh
+    <input type="text" id="date" name ="dob"required>
+
+</div>
+    <div class="gender">Giới tính
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Nam</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Nữ</label>
+
+    </div>
+    <div class="form-group">Địa chỉ
+        <input type="textarea" row="3" id="address" name="address">
+    </div>
+
+    <div class="form-group">Lớp
+        <select class="form-select" id="class" name="class">
+            <option>--Chọn lớp--</option>
+            <option>JV101</option>
+            <option>JV102</option>
+        </select>
+    </div>
+
+    </select>
+    <div class="form-group">Email
+        <input type="email" id="email" name="email"></div>
+
+    <div class="form-group">Điện thoại
+        <input type="number" id="phone" name="phone"></div>
+
+    <div class="form-buttons">
+        <button type="submit" class="register">Đăng ký</button>
+        <button type="reset" class="reset">Nhập lại</button>
+    </div>
+    </form>
+</div>
+</body>
+</html>

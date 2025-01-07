@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sở Thích Của Bạn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f7ff;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .form-container {
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-container h2 {
+            background-color: #ff6600;
+            color: #fff;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+            font-size: 18px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .checkbox-group label {
+            font-weight: normal;
+        }
+        .form-buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+        }
+        button[type="reset"] {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="form-container">
+    <h2>SỞ THÍCH CỦA BẠN</h2>
+    <form action="#" method="post">
+        <div class="form-group">
+            <label for="name">Họ và tên</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label>Sở thích</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="hobby" value="Thể thao"> Thể thao</label>
+                <label><input type="checkbox" name="hobby" value="Âm nhạc"> Âm nhạc</label>
+                <label><input type="checkbox" name="hobby" value="Đọc sách"> Đọc sách</label>
+                <label><input type="checkbox" name="hobby" value="Lướt web"> Lướt web</label>
+                <label><input type="checkbox" name="hobby" value="Chơi game"> Chơi game</label>
+                <label><input type="checkbox" name="hobby" value="Điện ảnh"> Điện ảnh</label>
+                <label><input type="checkbox" name="hobby" value="Du lịch"> Du lịch</label>
+            </div>
+        </div>
+        <div class="form-buttons">
+            <button type="submit">Gửi thông tin</button>
+            <button type="reset">Nhập lại</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

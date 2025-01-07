@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+
+
+        margin: 0;
+    }
+    .form-header {
+        background-color: white;
+        padding: 10px;
+        text-align: left;
+        font-size: 18px;
+        font-weight: bold;
+
+    }
+    .form-select{
+        display: flex;
+        align-items: center;
+        justify-content: left;
+
+    }
+    .form-group input,
+    .form-group select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .form-buttons button.register {
+        background-color: #4caf50;
+        color: white;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    .form-container {
+        background-color: #ffffcc;
+        width: 100%;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .form-buttons button {
+        padding: 8px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+<form action="#" method="post">
+    <div class="form-container">
+<div class="form-header">Market Research Survey</div>
+    <div class="form-group">Please take a few moment to complete this satisfaction survey.</div>
+        <div class="form-group">What is your age range?</div>
+<div class="form-select">
+    <select name="age" id="age">
+  <option value="age" min ="18" max="24">18-24</option>
+  <option value="age" min ="25" max="34">25-34</option>
+  <option value="age" min ="35" max="50">35-50</option>
+  <option value="age" min ="50">50+</option>
+</select>
+
+</div>
+    <div class="form-group">What is your yearly income range?</div>
+    <div class="form-select">
+        <select name="income" id="income">
+            <option value="income" min ="$0" max="$25.000">$0-$25,000</option>
+            <option value="income" min ="$25,001" max="$100,000">$25,001-$50,000</option>
+            <option value="income" min ="$0" max="$25.000">$50,001-$100,000</option>
+            <option value="income" min ="$100,001" >$100,000+</option>
+        </select>
+    </div>
+    <div class="form-buttons">Gender Identity <br>
+        <input type="radio" name="gender" id="Male"value="male" >
+        <label for="male">Male</label><br>
+        <input type="radio" name="gender" id="female"value="female">
+        <label for="female">Female</label><br>
+        <input type="radio" name="gender" id="Nonbinary"value="Nonbinary">
+        <label for="Nonbinary">Nonbinary</label><br>
+        <input type="radio" name="gender" id="other"value="other">
+        <label for="other">Other</label><br>
+        <input type="text" max="250"><br>
+        Maximum of 250 characters.<br>
+        <div class="form-buttons">Which of the following products have your purchased in the last 2 months. Please check all that reply
+            <br>
+            <input type="checkbox" name="product1" id="Product 1" value="product1">Product 1 <br>
+            <input type="checkbox" name="product2" id="Product 2" value="product2">Product 2 <br>
+            <input type="checkbox" name="product3" id="Product 3" value="product3">Product 3
+        </div>
+<div class="form-buttons">How often do you use our new product?<br>
+    <input type="radio" name="daily" id="daily" value="daily" >
+    <label for="daily">Daily</label><br>
+    <input type="radio" name="daily" id="weekly" value="weekly">
+    <label for="weekly">Weekly</label><br>
+    <input type="radio" name="daily" id="monthly" value="monthly">
+    <label for="monthly">Monthly</label><br>
+</div>
+<div class="form-group">What feature would you like to see in the new product?<br>
+    <textarea name="comments" id="comments" cols="100" rows="10"></textarea>
+</div>
+<div class="form-group">Please rate your level of agreement with the following statements:<br>
+<table border="1">
+    <tr>
+        <th></th>
+        <th>Strongly Disagree</th>
+        <th>Disagree</th>
+        <th>Agree</th>
+        <th>Strongly Agree</th>
+    </tr>
+    <tr>
+        <td>Our product are priced fairly</td>
+        <td><input type="radio" name="number" id=>1</td>
+        <td><input type="radio" name="number" id=>2</td>
+        <td><input type="radio" name="number" id=>3</td>
+        <td><input type="radio" name="number" id=>4</td>
+
+    </tr>
+    <tr>
+        <td>Our product are high quality</td>
+        <td><input type="radio" name="number1" >1</td>
+        <td><input type="radio" name="number1" id=>2</td>
+        <td><input type="radio" name="number1" id=>3</td>
+        <td><input type="radio" name="number1" id=>4</td>
+    </tr>
+    <tr>
+        <td>You would recommend our product to a friend or a coworker</td>
+        <td><input type="radio" name="number2" id=>1</td>
+        <td><input type="radio" name="number2" id=>2</td>
+        <td><input type="radio" name="number2" id=>3</td>
+        <td><input type="radio" name="number2" id=>4</td>
+    </tr>
+</table>
+</div>
+<div class="form-buttons">
+    <button type="submit">Submit</button>
+</div>
+
+</div>
+    </div>
+</form>
+</body>
+</html>
