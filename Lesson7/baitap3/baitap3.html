@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th label for="Amount">Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+    </tr>
+    <tr>
+        <td><input type="number" id="amount"></td>
+        <td><select id="currency1">
+            <option value="USD">USD</option>
+            <option value="VND">VND</option>
+        </select></td>
+        <td><select id="currency2">
+            <option value="USD">USD</option>
+            <option value="VND">VND</option>
+        </select></td>
+        <td>
+            <button type="submit" onclick="chuyentien()">Chuyển</button></td>
+    </tr>
+
+</table>
+<p id="result"></p>
+</body>
+</html>
+<script src="baitap3.js"></script>
