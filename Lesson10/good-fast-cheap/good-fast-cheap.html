@@ -3,106 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <title>Good-Fast-Cheap</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #f0f0f0;
-    }
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
 
-    .container {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
 
-    .toggle {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+        .toggle {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-    label {
-      position: relative;
-      display: inline-block;
-      width: 50px;
-      height: 25px;
-    }
+        label {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 25px;
+        }
 
-    input {
-      display: none;
-    }
+        input {
+            display: none;
+        }
 
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #ccc;
-      border-radius: 25px;
-      transition: 0.4s;
-    }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            border-radius: 25px;
+            transition: 0.4s;
+        }
 
-    .slider:before {
-      position: absolute;
-      content: "";
-      height: 17px;
-      width: 17px;
-      left: 4px;
-      bottom: 4px;
-      background-color: white;
-      border-radius: 50%;
-      transition: 0.4s;
-    }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 17px;
+            width: 17px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            border-radius: 50%;
+            transition: 0.1s;
+        }
 
-    input:checked + .slider {
-      background-color: #4caf50;
-    }
+        input:checked + .slider {
+            background-color: #4caf50;
+        }
 
-    input:checked + .slider:before {
-      transform: translateX(25px);
-    }
+        input:checked + .slider:before {
+            transform: translateX(25px);
+        }
 
-    p {
-      margin: 0;
-      font-size: 18px;
-      font-weight: bold;
-    }
+        p {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
 
-  </style>
+    </style>
 
 
 </head>
 <body>
 <div class="container">
-  <div class="toggle">
-<label>
-  <input type="checkbox" id="good">
-  <span class="slider"></span>
-  <p>Good</p>
-</label>
-  </div>
-<div class="toggle">
-  <label>
-  <input type="checkbox" id="fast">
-  <span class="slider"></span>
-  <p>Fast</p>
-</label>
-</div>
-<div class="toggle">
-  <label>
-  <input type="checkbox" id="cheap">
-  <span class="slider"></span>
-  <p>Cheap</p>
+    <div class="toggle">
+        <label>
+            <input type="checkbox" id="good"> good
+            <span class="slider"></span>
+            <p>Good</p>
+        </label>
+    </div>
+    <div class="toggle">
+        <label>
+            <input type="checkbox" id="fast"> fast
+            <span class="slider"></span>
+            <p>Fast</p>
+        </label>
+    </div>
+    <div class="toggle">
+        <label>
+            <input type="checkbox" id="cheap"> cheap
+            <span class="slider"></span>
+            <p>Cheap</p>
 
-</label>
-</div>
+        </label>
+    </div>
 </div>
 <script src="good-fast-cheap.js"></script>
 </body>

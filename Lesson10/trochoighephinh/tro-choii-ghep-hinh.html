@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img id="1" src="hinh-anh/funny-cat1_part1x1.jpg" height="100" onclick="changeImage(this)" width="600"><br>
+<img id="2" src="hinh-anh/monkey_part2x1.jpg" height="100" onclick="changeImage(this)" width="600"><br>
+<img id="3" src="hinh-anh/panda_swap_part3x1.jpg" height="100" onclick="changeImage(this)" width="600"><br>
+<img id="4" src="hinh-anh/monkey_part4x1.jpg" height="100" onclick="changeImage(this)" width="600"><br>
+<img id="5" src="hinh-anh/funny-cat1_part5x1.jpg" height="100" onclick="changeImage(this)" width="600">
+<script>
+
+    function changeImage(img) {
+        if (img.src.includes("funny-cat1_part1x1")) {
+            img.src = "hinh-anh/monkey_part1x1.jpg";
+        } else if (img.src.includes("monkey_part1x1")) {
+            img.src = "hinh-anh/panda_swap_part1x1.jpg";
+        } else if (img.src.includes("panda_swap_part1x1")) {
+            img.src = "hinh-anh/funny-cat1_part1x1.jpg";
+        } else if (img.src.includes("funny-cat1_part2x1")) {
+            img.src = "hinh-anh/monkey_part2x1.jpg";
+        } else if (img.src.includes("monkey_part2x1")) {
+            img.src = "hinh-anh/panda_swap_part2x1.jpg";
+        } else if (img.src.includes("panda_swap_part2x1")) {
+            img.src = "hinh-anh/funny-cat1_part2x1.jpg";
+        } else if (img.src.includes("funny-cat1_part3x1")) {
+            img.src = "hinh-anh/monkey_part3x1.jpg";
+        } else if (img.src.includes("monkey_part3x1")) {
+            img.src = "hinh-anh/panda_swap_part3x1.jpg";
+        } else if (img.src.includes("panda_swap_part3x1")) {
+            img.src = "hinh-anh/funny-cat1_part3x1.jpg";
+        } else if (img.src.includes("funny-cat1_part4x1")) {
+            img.src = "hinh-anh/monkey_part4x1.jpg";
+        } else if (img.src.includes("monkey_part4x1")) {
+            img.src = "hinh-anh/panda_swap_part4x1.jpg";
+        } else if (img.src.includes("panda_swap_part4x1")) {
+            img.src = "hinh-anh/funny-cat1_part4x1.jpg";
+        } else if (img.src.includes("funny-cat1_part5x1")) {
+            img.src = "hinh-anh/monkey_part5x1.jpg";
+        } else if (img.src.includes("monkey_part5x1")) {
+            img.src = "hinh-anh/panda_swap_part5x1.jpg";
+        } else if (img.src.includes("panda_swap_part5x1")) {
+            img.src = "hinh-anh/funny-cat1_part5x1.jpg";
+        }
+    }
+
+
+
+    function check() {
+        if ((document.getElementById("1").src.includes("funny-cat1_part1x1") &&
+            document.getElementById("2").src.includes("funny-cat1_part2x1") &&
+            document.getElementById("3").src.includes("funny-cat1_part3x1") &&
+            document.getElementById("4").src.includes("funny-cat1_part4x1") &&
+            document.getElementById("5").src.includes("funny-cat1_part5x1")) ||
+            (document.getElementById("2").src.includes("monkey_part1x1") &&
+            document.getElementById("2").src.includes("monkey_part2x1") &&
+            document.getElementById("2").src.includes("monkey_part3x1") &&
+            document.getElementById("2").src.includes("monkey_part4x1") &&
+            document.getElementById("2").src.includes("monkey_part5x1")) ||
+            (document.getElementById("2").src.includes("panda_swap_part1x1") &&
+            document.getElementById("2").src.includes("panda_swap_part2x1") &&
+            document.getElementById("2").src.includes("panda_swap_part3x1") &&
+            document.getElementById("2").src.includes("funny-cat1_part4x1") &&
+            document.getElementById("2").src.includes("funny-cat1_part5x1"))
+        ) {
+            document.getElementById("2").style['boxShadow']="0 0 5px red";
+        }
+    }
+    check();
+</script>
+</body>
+</html>
