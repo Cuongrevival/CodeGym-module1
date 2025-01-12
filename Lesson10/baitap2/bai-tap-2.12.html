@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tính Lãi Ngân Hàng</title>
+  <style>
+    body {
+      background-color: #f0f8ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      color: #333;
+      height: 100vh;
+      margin: 0;
+    }
+
+    input {
+      padding: 10px;
+      margin: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      width: 300px;
+    }
+
+    input[type="button"] {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+
+    input[type="button"]:hover {
+      background-color: #45a049;
+    }
+
+    p {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+<h1>Tính Lãi Ngân Hàng</h1>
+<label for="principal">Số tiền ban đầu (VND):</label>
+<input type="number" id="principal" placeholder="VD: 10000000">
+
+<label for="months">Số tháng cho vay:</label>
+<input type="number" id="months" placeholder="VD: 12">
+
+<label for="rate">Lãi suất hàng tháng (%):</label>
+<input type="number" id="rate" placeholder="VD: 1.5">
+
+<input type="button" value="Tính lãi" onclick="calculateCompoundInterest()">
+
+<p id="result"></p>
+
+<script>
+  function calculateCompoundInterest() {
+
+    const principal = parseFloat(document.getElementById("principal").value) || 0;
+    const months = parseInt(document.getElementById("months").value) || 0;
+    const rate = parseFloat(document.getElementById("rate").value) || 0;
+
+
+    if (principal <= 0 || months <= 0 || rate <= 0) {
+      document.getElementById("result").innerHTML = "Vui lòng nhập đầy đủ và chính xác các giá trị.";
+      return;
+    }
+
+
+    const monthlyRate = rate / 100;
+
+
+    const finalAmount = principal * Math.pow(1 + monthlyRate, months);
+
+
+    document.getElementById("result").innerHTML = `
+                Số tiền cuối cùng sau ${months} tháng là: <strong>${finalAmount.toLocaleString()} VND</strong>
+            `;
+  }
+</script>
+</body>
+</html>

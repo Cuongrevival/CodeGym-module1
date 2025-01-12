@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body {
+        justify-content: center;
+        align-items: center;
+        color: red;
+        text-align: center;
+        margin-top: 100px;
+        display: flex;
+        flex-wrap: wrap;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 200px;
+    }
+</style>
+<body>
+<script>
+    const a = parseInt(prompt("Nhập vào đây một số"));
+    const b = parseInt(prompt("Nhập vào đây một số nữa"));
+    const c = parseInt(prompt("Nhập vào đây một số cuối"));
+    if (a <= 0 || b <= 0 || c <= 0) {
+        alert('Đây không phải là những cạnh của một tam giác');
+
+    } else {
+        if (a + b <= c) {
+            alert('Đây không phải là những cạnh của một tam giác');
+        } else if (b + c <= a) {
+            alert('Đây không phải là những cạnh của một tam giác');
+
+        } else if (a + c <= b) {
+            alert('Đây không phải là những cạnh của một tam giác');
+
+        } else{
+            alert('Đây là các cạnh của một tam giác');
+        }
+    }
+</script>
+</body>
+</html>

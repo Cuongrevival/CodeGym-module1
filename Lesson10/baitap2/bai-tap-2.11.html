@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-color: lightblue;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            color: #d61b06;
+            font-family: "Candara Light", sans-serif;
+            font-size: 30px;
+        }
+
+        input {
+            scale: revert;
+            text-align: center;
+            padding: 10px;
+            margin: 50px;
+            border-radius: 10px;
+            border-bottom-color: transparent;
+        }
+    </style>
+</head>
+<body>
+<label for="thunhap">Thu nhập cá nhân</label> <br>
+<input type="number" id="thunhap" min="5000000" max="50000000" step="1000000" placeholder="VD:10000000">
+<label for="phuthuoc">Số người phụ thuộc</label><br>
+<input type="number" id="phuthuoc" placeholder="VD:2">
+<label for="baohiem">Phí bảo hiểm </label> <br>
+<input type="number" id="baohiem" placeholder="VD:3000000" min="1000000" max="4000000" step="1000000">
+<input type="button"  onclick='tongthunhap()' value ="Submit">
+<p id="tongthunhap"></p>
+<script>
+    function tongthunhap() {
+        let thuNhapHangThang = document.getElementById("thunhap").value;
+        let soNguoiPhuThuoc = document.getElementById("phuthuoc").value;
+        let phiBaoHiem = document.getElementById("baohiem").value;
+        let giamTruChiuThue = 11000000 + (soNguoiPhuThuoc * 4000000);
+        let thuNhapTinhThue = thuNhapHangThang - phiBaoHiem - giamTruChiuThue;
+        let luyTien = 0;
+        if (thuNhapTinhThue <= 5000000) {
+            luyTien = thuNhapTinhThue * 0.05;
+        } else if (thuNhapTinhThue >= 5000000 && thuNhapTinhThue <= 10000000) {
+            luyTien = 5000000 * 0.05 + (thuNhapTinhThue - 5000000) * 0.1;
+        } else if (thuNhapTinhThue >= 10000000 && thuNhapTinhThue <= 18000000) {
+            luyTien = 5000000 * 0.05 + 5000000 * 0.1 + (thuNhapTinhThue - 10000000) * 0.15;
+        } else if (thuNhapTinhThue <= 18000000) {
+            luyTien = 5000000 * 0.05 + 5000000 * 0.1 + 8000000 * 0.15 + (thuNhapTinhThue - 18000000) * 0.2;
+        }
+        document.getElementById("tongthunhap").innerHTML =
+            thuNhapTinhThue > 0
+                ? `Thu nhập tính thuế: ${thuNhapTinhThue.toLocaleString()} VND<br>Thuế phải nộp: ${luyTien.toLocaleString()} VND`
+                : "Thu nhập tính thuế không hợp lệ hoặc không phải nộp thuế.";
+    }
+
+</script>
+</body>
+</html>

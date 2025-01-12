@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin: 0;
+        height: 100vh;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 500px;
+    }
+</style>
+<body>
+<script>
+    const a = parseInt(prompt("Nhập một số, tôi sẽ nói ra kết quả diện tích của một hình chữ nhật"));
+    const b = parseInt(prompt("Một số là chưa đủ, tôi muốn bạn nhập thêm một số nữa"));
+    if (a < 0 || b < 0) {
+        alert("Dữ liệu bạn đã nhập không có tác dụng để tạo ra hình chữ nhật");
+    } else if (a === b) {
+        alert("Bạn nhập hai số cùng giá trị, nó sẽ tạo thành hình vuông, tôi cần bạn làm lại");
+    } else {
+        const recArea = a * b;
+        alert("Thông số của bạn ok rồi, kết quả đây nhé");
+        document.write(recArea);
+    }
+</script>
+</body>
+</html>

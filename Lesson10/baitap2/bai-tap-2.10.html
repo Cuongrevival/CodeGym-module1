@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-color: lightblue;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 200px;
+        }
+    </style>
+</head>
+<body>
+<script>
+    const p = parseInt(prompt('Nhập vào đây công suât tiêu thụ điện nhà bạn(kW)'));
+    const t = parseInt(prompt('Nhập vào đây thời gian tiêu thụ điện nhà bạn(h)'))
+    const a = p * t;
+    var tienDien;
+    if (a >= 0 && a <= 50) {
+        tienDien = a * 1806;
+    } else if (a > 50 && a <= 100) {
+        tienDien = a * 1866;
+    } else if (a > 100 && a <= 200) {
+        tienDien = a * 2167;
+    } else if (a > 200 && a <= 300) {
+        tienDien = a * 2729;
+    } else if (a > 300 && a <= 400) {
+        tienDien = a * 3050;
+    } else {
+        tienDien = a * 3151;
+    }
+    document.write('Giá tiền điện nhà bạn là: ' + tienDien);
+</script>
+</body>
+</html>

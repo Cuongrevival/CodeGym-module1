@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body {
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        height: 100vh;
+        font-family: Arial, Helvetica, sans-serif;
+        color: red;
+        display: flex;
+        font-size: 400px;
+    }
+</style>
+<body>
+<script>
+    const a = parseInt(prompt("Nhập một cạch kề của tam giác vuông vào đây"));
+    const b = parseInt(prompt("Nhập một cạch kề khác của tam giác vuông"));
+    if (a < 0 || b < 0) {
+        alert("Tôi không thể tạo ra được một tam giác vuông khi một trong hai cạnh kể của nó thấp hơn 0");
+    } else {
+        const area = (a + b) / 2;
+        alert("Ok! Kết quả đây nhé");
+        document.write(area);
+    }
+</script>
+</body>
+</html>

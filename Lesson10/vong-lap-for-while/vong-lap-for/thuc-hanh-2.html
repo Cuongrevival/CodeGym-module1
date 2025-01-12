@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+<script>
+    let sum = 0;
+    let n = parseInt(prompt("Enter a number"));
+    for (let i = 0; i <= n; i++) {
+        sum += i;
+    }
+    document.write('The total of all numbers from  0 to the number you type: ' + sum);
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        button{
+            width: 100px;
+            color:blue;
+        }
+        form{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<div class = "form">
+    <input type="text" id="view" readonly style = "width:405px">
+    <br>
+    <button onclick="inputValue('(')">(</button>
+    <button onclick="inputValue(')')">)</button>
+    <button onclick="inputValue('%')">%</button>
+    <button onclick="inputValue('.')">.</button>
+    <br>
+    <button onclick="inputValue('1')">1</button>
+    <button onclick="inputValue('2')">2</button>
+    <button onclick="inputValue('3')">3</button>
+    <button onclick="inputValue('+')">+</button>
+    <br>
+    <button onclick="inputValue('4')">4</button>
+    <button onclick="inputValue('5')">5</button>
+    <button onclick="inputValue('6')">6</button>
+    <button onclick="inputValue('-')">-</button>
+    <br>
+    <button onclick="inputValue('7')">7</button>
+    <button onclick="inputValue('8')">8</button>
+    <button onclick="inputValue('9')">9</button>
+    <button onclick="inputValue('*')">*</button>
+    <br>
+    <button onclick="xoa()">C</button>
+    <button onclick="inputValue('0')">0</button>
+    <button onclick="result()" style="color:white;background-color: blue">=</button>
+    <button onclick="inputValue('/')">/</button>
+</div>
+<script>
+    let view = document.getElementById("view");
+    function inputValue(value) {
+        view.value += value;
+    }
+    function result() {
+        try {
+            let result = eval(view.value);
+            view.value = result;
+        } catch (e) {
+            view.value = "Error";
+        }
+    }
+    function xoa() {
+        view.value = "";
+    }
+</script>
+</body>
+</html>
