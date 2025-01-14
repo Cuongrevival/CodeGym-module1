@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let n =parseInt(prompt('Enter a number'));
+
+        let f1 = 1;
+        let f2 = 1;
+        for (let i = 2; i <= n; i++) {
+        let f = f1 + f2;
+        f1 = f2;
+        f2 = f;
+        document.write(f + ' ');
+    }
+</script>
+</body>
+</html>

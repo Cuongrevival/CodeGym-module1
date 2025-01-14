@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n;
+    while (true) {
+        n = parseInt(prompt('Nhập vào đây nhiệt độ hiện tại cập nhật ở thành phố của bạn'));
+        if (n > 100) {
+            alert('Yêu cầu giảm nhiệt độ. Nhiệt độ quá lớn');
+        } else if (n < 20) {
+            alert('Yêu cầu tăng nhiệt độ. Nhiệt độ bạn nhập đang lạnh');
+        }else{
+            break;
+        }
+
+    }
+    document.write('Nhiệt độ hiện tại đang là: ' + n);
+
+
+</script>
+</body>
+</html>

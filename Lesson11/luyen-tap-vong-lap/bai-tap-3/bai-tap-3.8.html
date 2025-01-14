@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-color: lightskyblue;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            display: flex;
+            height: 100vh;
+        }
+
+        input {
+            width: 400px;
+            height: 50px;
+            border-radius: 10px;
+            border-color: black;
+        }
+
+        input:hover {
+            border-color: red;
+
+        }
+
+        textarea {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            display: flex;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+<input type="button" onclick="myFunction()" value='Chơi'>
+<script>
+    function myFunction() {
+
+        let a = parseInt(prompt("Nhập số đầu tiên giới hạn trong khoảng bạn muốn chọn"));
+        let b = parseInt(prompt("Nhập số thứ hai giới hạn trong khoảng bạn muốn chọn"));
+        let n = parseInt(prompt("Hãy nhập một số"));
+        do{
+            if (isNaN(a) || isNaN(b) || isNaN(n)) {
+                alert("Vui lòng nhập lại số");
+
+            } else if (a === b) {
+                alert("Vui lòng nhập lại số");
+
+            } else if (a > b) {
+                alert("Vui lòng nhập lại số");
+                return;
+            }
+        }
+        while (a!==b);
+        let random = Math.floor(Math.random() * b);
+        if (random < a) {
+            random += a;
+        }
+        if (n === random) {
+            document.write("Chúc mừng!");
+        } else {
+            document.write("Rất tiếc!");
+
+        }
+
+    }
+
+
+</script>
+</body>
+</html>

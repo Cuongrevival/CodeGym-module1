@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n;
+    let a;
+    while (true) {
+        n = parseInt(prompt('Enter a number: '));
+        if (n <= 2) {
+            alert('Yêu cầu nhập lại');
+        } else {
+            let f1 = 1, f2 = 1;
+            for (let i = 3; i <= n; i++) {
+                let f = f1 + f2;
+                f1 = f2;
+                f2 = f;
+                if(f%5===0){
+                    a=f;
+                    break;
+                }
+            }break;
+
+        }
+    }
+    document.write(a);
+</script>
+</body>
+</html>
