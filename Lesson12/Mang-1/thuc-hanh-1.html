@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="value" placeholder="Nhập giá trị vào đây">
+<label for="value"></label>
+<input type="button" onclick="add()" id="btnAdd" value="add">
+<input type="button" onclick="display()" id="btnDisplay" value="display">
+<p id="result">Result</p>
+<script>
+  let array = [];
+  let x=0;
+  function add(){
+    let value1 = document.getElementById("value").value;
+    array[x]= value1;
+    x++;
+    document.getElementById("value").value= '';
+  }
+  function display(){
+    let a =" ";
+    for (let i=0; i<array.length; i++){
+     a+= 'Element ' + i + ' : ' + array[i] + '<br>';
+    }
+    document.getElementById("result").innerHTML = a;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<p id="carogame"></p>
+<body>
+<input type="button" id="changetype" onclick="change()" value="changeType">
+<script>
+    let b = document.getElementById("carogame");
+    let arr = [];
+    let data = '';
+    for (let i = 0; i < 5; i++) {
+        arr[i] = new Array(0, 0, 0, 0, 0);
+    }
+    for (let i = 0; i < 5; i++) {
+        data += '<br>';
+        for (let j = 0; j < 5; j++) {
+            data += arr[i][j] + '&nbsp;&nbsp;';
+        }
+        b.innerHTML = data;
+    }
+    function change() {
+        let X = prompt('Enter X')
+        let Y = prompt('Enter Y')
+        data = '';
+        arr[X][Y] = 'x';
+        for (let i = 0; i < 5; i++) {
+            data += '<br/>';
+            for (let j = 0; j < 5; j++) {
+                data += arr[i][j] + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+            }
+            b.innerHTML = data;
+        }
+    }
+</script>
+</body>
+</html>
