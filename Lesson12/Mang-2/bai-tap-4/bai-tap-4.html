@@ -20,20 +20,21 @@
 </div>
 <script>
     const output = 'Cho dù bạn có làm gì cũng vô dụng thôi'
-    const textarea = document.getElementById('output');
     let i = 0;
-
-    document.addEventListener('keydown', () => {
+    const textarea = document.getElementById('output');
+    document.addEventListener('keydown', (event) => {
+        event.preventDefault();
         const text = output[i];
         if (text) {
             textarea.textContent += text;
             i++;
 
         }
-        if (index > output.length) {
-            index = 0;
+        if (i>= output.length) {
+            i = 0;
             textarea.textContent = "";
         }
+
     });
 
 </script>

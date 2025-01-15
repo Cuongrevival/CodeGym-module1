@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [0, 5, 6, 3, '6', 'td', 'annual', 2, 1, 2, 5, '#$'];
+    let count = 0;
+    for (let index = 0; index < arr.length; index++) {
+        count++;
+    }
+    document.write('Kích thước của mảng cho trước = ' + count + ' <br> ');
+
+    let countNumber = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (parseInt(arr[i])) {
+        countNumber++;
+        }
+    }
+    document.write('Số lượng ký tự số trong mảng = '+ countNumber);
+
+</script>
+</body>
+</html>
