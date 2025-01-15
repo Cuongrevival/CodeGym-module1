@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+<p id="carogame"></p>
+<input type="button" id="changetype" onclick="change()" value="Change">
+
+<script>
+    let b = document.getElementById("carogame");
+    let arr = [];
+    let data = '';
+    let gameEnded = false;
+    for (let i = 0; i < 5; i++) {
+        arr[i] = ['(.)', '(.)', '(.)', '(.)', '(.)'];
+
+    }
+    for (let i = 0; i < 5; i++) {
+        data += '<br>';
+        for (let j = 0; j < 5; j++) {
+            data += arr[i][j] + '&nbsp;&nbsp;';
+        }
+        b.innerHTML = data;
+    }
+    let playerSymbol = 'O';
+
+    function change() {
+        let X = +prompt('Enter X')
+        let Y = +prompt('Enter Y')
+        data = '';
+        if (arr[X][Y] === '(.)') {
+            arr[X][Y] = playerSymbol;
+        }
+        if (playerSymbol === 'O') {
+            playerSymbol = 'X';
+        } else {
+            playerSymbol = 'O';
+        }
+        for (let i = 0; i < 5; i++) {
+            data += '<br/>';
+            for (let j = 0; j < 5; j++) {
+                data += arr[i][j] + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+            }
+            b.innerHTML = data;
+        }
+        isWin();
+
+        function isWin() {
+            for (let i = 0; i < 5; i++) {
+                for (let j = 0; j < 5; j++) {
+                    if (arr[i][j] === 'X' && arr[i][j + 1] === 'X' && arr[i][j + 2] === 'X' ||
+                        arr[i][j] === 'X' && arr[i + 1][j] === 'X' && arr[i + 2][j] === 'X' ||
+                        arr[i][j] === 'X' && arr[i + 1][j + 1] === 'X' && arr[i + 2][j + 2] === 'X') {
+                        alert('X Wins')
+                    } else if (arr[i][j] === 'O' && arr[i][j + 1] === 'O' && arr[i][j + 2] === 'O' ||
+                        arr[i][j] === 'O' && arr[i + 1][j] === 'O' && arr[i + 2][j] === 'O' ||
+                        arr[i][j] === 'O' && arr[i + 1][j + 1] === 'O' && arr[i + 2][j + 2] === 'O') {
+                        alert('O Wins')
+                    }
+                    gameEnded = true;
+                }
+            }
+        }
+
+    }
+
+
+
+
+</script>
+</body>
+</html>

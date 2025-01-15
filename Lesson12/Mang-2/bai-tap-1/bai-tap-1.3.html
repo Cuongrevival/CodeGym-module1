@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str =window.prompt();
+    let x = 'ABCDEFGHIKLMNOPQRSTUVWXYZ'
+    let y = 'abcdefghiklmnopqrstuvwxyz'
+    let arr = [];
+    for (let i = 0; i < str.length; i++) {
+        if (x.indexOf(str[i]) !== -1) {
+            arr.push(str[i].toLowerCase());
+        } else if (y.indexOf(str[i]) !== -1) {
+            arr.push(str[i].toUpperCase());
+        } else {
+            arr.push(str[i]);
+        }
+
+    }
+    document.write(arr.join(''));
+</script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic tac toe</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: auto;
+        }
+
+        th, td {
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+        }
+
+        button {
+            width: 100px;
+            height: 50px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .x {
+            color: red;
+        }
+
+        .o {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <th id="1"></th>
+        <th id="2"></th>
+        <th id="3"></th>
+    </tr>
+    <tr>
+        <td id="4"></td>
+        <td id="5"></td>
+        <td id="6"></td>
+    </tr>
+    <tr>
+        <td id="7"></td>
+        <td id="8"></td>
+        <td id="9"></td>
+    </tr>
+</table>
+<button onclick="reset()" id="reset">Reset</button>
+<script>
+    let player = "X";
+    let gameEnded = false;
+    for (let i = 1; i <= 9; i++) {
+        document.getElementById(i.toString()).addEventListener("click", function () {
+                if (this.innerHTML === "" && !gameEnded) {
+                    this.innerHTML = player;
+                    this.classList.add(player.toLowerCase());
+                    isWin();
+                    if (player === "X") {
+                        player = 'O';
+                    } else {
+                        player = 'X';
+                    }
+                }
+            }
+        );
+
+    }
+    let wins = [
+        [1, 2, 3], [4, 5, 6],
+        [7, 8, 9], [1, 4, 7],
+        [2, 5, 8], [3, 6, 9],
+        [1, 5, 9], [3, 5, 7]
+    ]
+
+    function isWin() {
+
+        for (let j = 0; j < wins.length; j++) {
+            if (document.getElementById(wins[j][0]).innerHTML === player &&
+                document.getElementById(wins[j][1]).innerHTML === player &&
+                document.getElementById(wins[j][2]).innerHTML === player) {
+                document.getElementById(wins[j][0]).classList.add("win");
+                document.getElementById(wins[j][1]).classList.add("win");
+                document.getElementById(wins[j][2]).classList.add("win");
+                gameEnded = true;
+
+                setTimeout(function () {
+                    alert(player + '  win!');
+                }, 500)
+            }
+
+        }
+    }
+
+    function reset() {
+        document.getElementById("reset").addEventListener("click", function () {
+
+            for (let k = 1; k <= 9; k++) {
+                document.getElementById(k.toString()).innerHTML = "";
+                document.getElementById(k.toString()).classList.remove("x");
+                document.getElementById(k.toString()).classList.remove("o");
+                document.getElementById(k.toString()).classList.remove("win");
+                gameEnded = false;
+            }
+        });
+    }
+</script>
+</body>
+</html>

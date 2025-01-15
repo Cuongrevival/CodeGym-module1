@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="inputValue">
+<label for="inputValue"></label>
+<button onclick="getWord()">Search</button>
+<p id="result"></p>
+<script>
+
+    let arr = ['Complexity', 'Available', 'Perform', 'Operating System'];
+    let arr2 = ['Phức tạp', 'Có hiệu lực', 'Thực hành', 'Hệ điều hành'];
+
+    function getWord() {
+        let input = document.getElementById("inputValue").value.trim();
+       let inputWord = arr.indexOf(input);
+    if(inputWord !== -1) {
+        document.getElementById("result").innerHTML = `Từ tiếng Việt: ${arr2[inputWord]}`;
+    }else{
+        document.getElementById("result").innerHTML = 'Không tìm thấy';
+    }
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            margin: 0;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+<h1>Type anything slowly</h1>
+<div><textarea cols="50" rows="10" id="output"></textarea>
+    <label for="output"></label>
+</div>
+<script>
+    const output = 'Cho dù bạn có làm gì cũng vô dụng thôi'
+    const textarea = document.getElementById('output');
+    let i = 0;
+
+    document.addEventListener('keydown', () => {
+        const text = output[i];
+        if (text) {
+            textarea.textContent += text;
+            i++;
+
+        }
+        if (index > output.length) {
+            index = 0;
+            textarea.textContent = "";
+        }
+    });
+
+</script>
+</body>
+</html>

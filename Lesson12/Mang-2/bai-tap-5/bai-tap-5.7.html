@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    for (let i = 0; i < 10; i++) {
+        let n = parseInt(prompt("Enter number: "));
+        arr.push(n);
+
+    }
+    let V = parseInt(prompt("Enter a number to delete"));
+    if (arr.includes(V)) {
+        let index = arr.indexOf(V);
+        if (index !== -1) {
+            for (let i = index; i < arr.length - 1; i++) {
+                arr[i] = arr[i + 1];
+                arr[arr.length - 1] = 0;
+
+            }
+        } else {
+            alert(`${V} is not in the array!`);
+        }
+    }
+    document.write(arr);
+</script>
+</body>
+</html>

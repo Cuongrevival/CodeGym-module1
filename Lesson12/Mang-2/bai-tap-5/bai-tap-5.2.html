@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [10, 24, 30, 40, 50, 60, 4352, 1, 3, 5, 4, 100, 223];
+    let max = arr[0];
+    let pos = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+            pos = i;
+        }
+    }
+    document.write('Số lớn nhất là số: '+ max + ' nằm ở vị trí thứ ' + pos);
+</script>
+</body>
+</html>
