@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>The star <span><input type="text" id="inputValue" oninput="findStar()"></span> is in <span id="result"></span>
+    constellation</p>
+<script>
+    let stars = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let constellations = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+
+    function findStar() {
+        let input = document.getElementById("inputValue").value.trim();
+        let inputConstellations = stars.indexOf(input);
+        if (inputConstellations !== -1) {
+            document.getElementById("result").innerHTML = `${constellations[inputConstellations]}`;
+        } else {
+            document.getElementById("result").innerHTML = 'no';
+        }
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="number" oninput="squareUp()">
+<label for="number"></label>
+<p id="result" ></p>
+<script>
+    function squareUp() {
+       let n = document.getElementById("number").value;
+       let s = n * n;
+       document.getElementById("result").innerHTML = `${s}`;
+    }
+
+
+
+</script>
+</body>
+</html>

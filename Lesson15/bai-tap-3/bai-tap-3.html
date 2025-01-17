@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Add new product</h2>
+
+  <input type="text" id="productInput">
+  <button onclick = addProduct()>add</button>
+
+<table>
+  <thead>
+  <tr>
+    <th>Product</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody id="productTable">
+
+  </tbody>
+</table>
+<script>
+  let products = ['Apple', 'Banana', 'Orange', 'Grape'];
+  function displayProduct() {
+    let table = document.getElementById('productTable');
+    let rows = '';
+    for (let i = 0; i < products.length; i++) {
+      rows += `<tr>
+      <td>${products[i]}</td>
+      <td><button type = "button" onclick = "removeProduct(${i})">Delete</button>
+      <button type = "button" onclick = "editProduct(${i})">Edit</button>
+      </td>
+     </tr>`;
+     }
+    table.innerHTML = rows;
+  }
+  displayProduct();
+  function addProduct() {
+    const productName = document.getElementById('productInput').value;
+    products.push(productName);
+    displayProduct();
+  }
+  function removeProduct(index) {
+    const productName = products[index];
+    if(confirm('Are you sure you want to remove ' + productName + '?')) {
+      products.splice(index, 1);
+      displayProduct();
+    }
+  }
+  function editProduct(index) {
+    const productName1 = prompt('Enter product name ', products[index]);
+    products[index] = productName1;
+    displayProduct();
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<p>Giai thừa của <span><input type="number" id='number' oninput="calculate()"></span> là <span id="result"></span></p>
+<script>
+    function calculate() {
+        let num = document.getElementById('number').value;
+        let num1 = parseInt(num);
+        if (num1 <= 1) {
+            document.getElementById('result').innerHTML = 1;
+        } else {
+           let result1 = 1;
+            for (let i = num1; i > 0; i--) {
+                result1 = result1 * i;
+                document.getElementById('result').innerHTML = result1;
+            }
+        }
+
+
+
+    }
+
+</script>
+</body>
+</html>

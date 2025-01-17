@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function isPalindrome(str) {
+        str.toLowerCase();
+
+        function check(left, right) {
+            if (left >= right) {
+                return true;
+            }
+            if (str[left] !== str[right]) {
+                return false;
+            }
+            return check(left + 1, right - 1);
+        }
+
+        return check(0, str.length - 1);
+    }
+
+    let n = prompt('Nhập vào đây một chuỗi ký tự bất kì');
+    if (isPalindrome(n)) {
+        document.write(`${n} là chuỗi đối xứng`);
+    } else {
+        document.write(`${n} không là chuỗi đối xứng`);
+
+    }
+</script>
+</body>
+</html>

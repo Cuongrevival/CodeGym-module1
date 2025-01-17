@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function twoNumbers(num1, num2) {
+        let result = 0;
+        if (num1 > num2) {
+            alert('Ok');
+        } else if (num1 < num2) {
+            result = num1 + num2;
+            return result;
+        }
+    }
+
+    document.write(twoNumbers(Math.floor(Math.random() * 10), Math.floor(Math.random() * 11)));
+</script>
+</body>
+</html>

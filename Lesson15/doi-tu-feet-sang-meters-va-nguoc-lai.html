@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p><span><input type="number" id="foot" oninput="footToMeter()"></span> feet bằng <span id="meter" ></span> mét</p>
+<p><span><input type="number" id="meter2" oninput="meterToFoot()"></span>mét bằng <span id="foot2" ></span> feet</p>
+<script>
+    function footToMeter() {
+        let f =document.getElementById("foot").value;
+        let foot1 = parseFloat(f);
+        document.getElementById("meter").innerHTML = foot1 * 0.305;
+    }
+
+    function meterToFoot() {
+        let m = document.getElementById("meter2").value;
+        let meter1 = parseFloat(m);
+        document.getElementById("foot2").innerHTML = meter1 * 3.279;
+    }
+
+
+</script>
+</body>
+</html>

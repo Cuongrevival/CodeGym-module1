@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Các số khi ở vị trí ban đầu: <span><input type="text" id="number" oninput="changeNumber()"></span></p>
+<p>Sau khi chuyển: <span id="result"></span></p>
+<script>
+
+
+    function changeNumber() {
+    let arr = document.getElementById("number").value;
+    let num = arr.split(",");
+    num.reverse();
+    document.getElementById("result").innerHTML = num;
+    }
+</script>
+</body>
+</html>

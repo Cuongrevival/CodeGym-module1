@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Một chuỗi ký tự như sau: <span><input type="text" id="string" oninput="checkInput()"></span></p>
+<p>Hãy nhập một ký tự vào đây: <span><input type="text" id="something" oninput="checkInput()"></span></p>
+<p>Ký tự đó <span id="result"></span></p>
+<script>
+    function checkInput() {
+        let text = document.getElementById("string").value;
+        let something = document.getElementById("something").value;
+        let count = 0;
+        if (something.length === 1) {
+            for (let char of text) {
+                if (char === something) {
+                    count++;
+                }
+            }
+            if (count > 0) {
+                document.getElementById("result").innerHTML = ' có trong chuỗi và nó xuất hiện ' + count + ' lần';
+            } else {
+                document.getElementById("result").innerHTML = ' -1 ';
+            }
+        } else {
+            document.getElementById('result').innerHTML = ' ';
+        }
+    }
+
+
+</script>
+</body>
+</html>
