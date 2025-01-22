@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let Circle = function (radius, color) {
+    this.radius = radius;
+    this.color = color;
+    this.getRadius = function () {
+      return this.radius;
+    }
+    this.getColor = function () {
+      return this.color;
+    }
+    this.setColor = function (newColor) {
+      this.color = newColor;
+    }
+    this.getArea = function () {
+      return (this.radius * this.radius * Math.PI).toFixed(2);
+    }
+  }
+  let circle = new Circle(4);
+  circle.setColor("red");
+  let radius = circle.getRadius();
+  let area = circle.getArea();
+  let color = circle.getColor();
+  document.write("radius = " + radius + "<br>" + "color = " + color + "<br>" + "area = " + area);
+</script>
+</body>
+</html>
