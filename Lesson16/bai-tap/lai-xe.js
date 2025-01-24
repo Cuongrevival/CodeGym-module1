@@ -25,8 +25,9 @@ function start() {
     ctx.fillStyle = "green";
     obstacles.forEach(obstacle => {
         ctx.fillRect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
-        touchObstacle();
+
     });
+    touchObstacle();
 }
 
 document.addEventListener('keydown', key => {
@@ -56,7 +57,7 @@ document.addEventListener('keydown', key => {
 function touchCanvas() {
     if (car.x <= 0 || car.x + car.width >= 400 || car.y + car.height >= 600 || car.y <= 0) {
         isGameOver = true;
-        console.log('lose');
+        alert('Bạn thua')
     }
 }
 
@@ -67,7 +68,7 @@ function touchObstacle() {
             car.y < obstacle.y + obstacle.height &&
             car.y + car.height > obstacle.y) {
             isGameOver = true;
-            console.log('lose');
+            alert('Bạn thua');
         }
     });
 }
