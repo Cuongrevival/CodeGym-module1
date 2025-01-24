@@ -11,8 +11,8 @@
         this.x = x;
         this.y = y;
         this.radius = radius;
-        this.dx = Math.floor(Math.random() - 0.5) * 5;
-        this.dy = Math.floor(Math.random() - 0.5) * 5;
+        this.dx = Math.floor(Math.random() - 0.5) * 2;
+        this.dy = Math.floor(Math.random() - 0.5) * 2;
         this.color = getRandomColor();
     }
 
@@ -37,7 +37,7 @@
         let canvas = document.getElementById("myCanvas");
         let ctx = canvas.getContext("2d");
         let circles = [];
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < 80; i++) {
             let radius = Math.floor(Math.random() * 100);
             let x = Math.random() * canvas.width;
             let y = Math.random() * canvas.height;

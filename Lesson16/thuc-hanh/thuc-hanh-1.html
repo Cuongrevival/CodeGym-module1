@@ -35,7 +35,7 @@
       this.year = year;
     }
     this.toString = function () {
-      return new Date(this.day+ this.month, this.day);
+      return new Date(this.day + this.month + this.year);
     }
 
   }
@@ -43,10 +43,7 @@ let date = new myDate(20, 1, 1987);
   date.setDay(15);
   date.setMonth(4);
   date.setYear(2024);
-  let day = date.getDay();
-  let month = date.getMonth();
-  let year = date.getYear();
-  alert(day + "/" + month + "/" + year);
+  document.write(date.toString());
 </script>
 </body>
 </html>
