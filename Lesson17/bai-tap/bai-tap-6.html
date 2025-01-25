@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+  class Remote {
+    constructor(code) {
+      this.code = code;
+    }
+
+    changeChannel(tv, channel) {
+      if (tv.isOn) {
+        tv.currentChannel = channel;
+        console.log(`Remote đã chuyển TiVi sang kênh ${channel}.`);
+      } else {
+        console.log("TiVi đang tắt. Không thể chuyển kênh.");
+      }
+    }
+
+    adjustVolume(tv, volumeChange) {
+      if (tv.isOn) {
+        tv.currentVolume += volumeChange;
+        if (tv.currentVolume < 0) tv.currentVolume = 0;
+        console.log(`Remote đã điều chỉnh âm lượng. Âm lượng hiện tại: ${tv.currentVolume}.`);
+      } else {
+        console.log("TiVi đang tắt. Không thể điều chỉnh âm lượng.");
+      }
+    }
+
+    togglePower(tv) {
+      tv.isOn = !tv.isOn;
+      console.log(`Remote đã ${tv.isOn ? "bật" : "tắt"} TiVi.`);
+    }
+  }
+
+  class TiVi {
+    constructor() {
+      this.currentChannel = 1;
+      this.currentVolume = 10;
+      this.isOn = false;
+    }
+
+    changeChannel(channel) {
+      if (this.isOn) {
+        this.currentChannel = channel;
+        console.log(`TiVi đã chuyển sang kênh ${channel}.`);
+      } else {
+        console.log("TiVi đang tắt. Không thể chuyển kênh.");
+      }
+    }
+
+    adjustVolume(volumeChange) {
+      if (this.isOn) {
+        this.currentVolume += volumeChange;
+        if (this.currentVolume < 0) this.currentVolume = 0;
+        console.log(`Âm lượng hiện tại của TiVi: ${this.currentVolume}.`);
+      } else {
+        console.log("TiVi đang tắt. Không thể điều chỉnh âm lượng.");
+      }
+    }
+  }
+
+  const myTV = new TiVi();
+  const myRemote = new Remote("RMT-001");
+
+
+  myRemote.togglePower(myTV);
+  myTV.changeChannel(7);
+  myRemote.changeChannel(myTV, 3);
+  myRemote.adjustVolume(myTV, 2);
+  myRemote.togglePower(myTV);
+
+  console.log(`TiVi trạng thái: ${myTV.isOn ? "Bật" : "Tắt"}, Kênh: ${myTV.currentChannel}, Âm lượng: ${myTV.currentVolume}.`);
+
+</script>
+</body>
+</html>

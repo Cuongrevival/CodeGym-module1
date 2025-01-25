@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor() {
+            this.weight = 10;
+            this.decrease = function () {
+                this.weight -= 1;
+                return this.weight;
+            }
+            this.isEmpty = function () {
+                if (this.weight <= 0) {
+                    return true;
+                }
+                return false;
+            }
+            this.getWeight = function () {
+                return this.weight;
+            }
+        }
+    }
+
+    class Human {
+
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+
+            this.getName = function () {
+                return this.name;
+            }
+            this.setName = function (name) {
+                this.name = name;
+            }
+            this.getWeight2 = function () {
+                return this.weight;
+            }
+            this.setWeight = function (weight) {
+                this.weight = weight;
+            }
+            this.checkGender = function () {
+                if (this.gender === 'Male') {
+                    return `${this.name} is male`;
+                } else if (this.gender === 'Female') {
+                    return `${this.name} is female`;
+                }
+            }
+
+            this.eat = function (apple) {
+                if (!apple.isEmpty()) {
+                    apple.decrease();
+                    this.weight += 1;
+                    console.log(`${this.name} ate apple. Current weight: ${this.weight}. Apple weight: ${apple.getWeight()}`);
+                } else {
+                    console.log('apple is empty');
+                }
+            }
+                this.speak = function (word) {
+                    return`${this.name} say "${word}"`;
+                }
+
+            }
+
+    }
+
+    let husband = new Human(`Adam`, `Male`, 70);
+    let wife = new Human(`Eva`, `Female`, 50);
+    let apple = new Apple();
+    console.log(husband.speak("I love you"));
+    husband.eat(apple);
+    wife.eat(apple);
+    console.log(wife.checkGender());
+
+</script>
+</body>
+</html>
