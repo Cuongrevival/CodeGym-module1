@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function checkTriangle(x, y, z) {
+    if (x < 0 || y < 0 || z < 0) {
+      return'Đây không phải là ba cạnh của một tam giác';
+    } else if (x + y <= z || y + z <= x && x + z <= y) {
+      return 'Đây không phải là ba cạnh của một tam giác';
+    } else if (x * x + y * y === z * z || x * x + z * z === y * y || z * z + y * y === x * x) {
+      return 'Đây là ba cạnh của một tam giác vuông';
+    } else {
+      return 'Đây chỉ là ba cạnh của một tam giác';
+    }
+  }
+  let a = parseInt(prompt('Nhập một cạnh của một tam giác'));
+  let b = parseInt(prompt('Nhập một cạnh khác của một tam giác'));
+  let c = parseInt(prompt('Nhập một cạnh khác của một tam giác'));
+  let check = checkTriangle(a, b, c);
+  console.log(check);
+</script>
+</body>
+</html>

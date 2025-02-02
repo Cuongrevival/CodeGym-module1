@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check ký tự</title>
+</head>
+<body>
+<script>
+    function checkString(ar) {
+        let isNum = false;
+        let isLetter = false;
+        for (let i = 0; i < ar.length; i++) {
+            if (/^[0-9]$/.test(ar[i])) {
+                isNum = true;
+            } else if (/^[a-zA-Z]$/.test(ar[i])) {
+                isLetter = true;
+            }
+            if (isNum && isLetter) {
+                return -1;
+            }
+        }
+        return isNum ? 1 : 0;
+    }
+
+    let arr = [];
+    let n = parseInt(prompt('Nhập vào đây độ dài của một chuỗi'));
+    for (let i = 0; i < n; i++) {
+        let x = prompt('Nhập vào đây một ký tự bất kỳ');
+        arr.push(x);
+    }
+    console.log(arr);
+    console.log(checkString(arr));
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra mảng</title>
+</head>
+<body>
+<script>
+    function checkArray(ar) {
+        const anotherAr = [];
+        for (let i = 0; i < ar.length; i += 2) {
+            anotherAr.push([ar[i], ar[i + 1]]);
+        }
+        let check = '';
+        for (let i = 0; i < anotherAr.length; i++) {
+                if (anotherAr[i][0] < anotherAr[i][1]) {
+                    check = 'OK';
+                } else {
+                    check = 'NO';
+                }
+
+        }
+        return check;
+    }
+
+    let arr = [];
+    let n;
+    do {
+        n = parseInt(prompt('Nhập vào đây độ dài mảng'));
+        if (n > 2 && n % 2 !== 0) {
+            alert('Yêu cầu cần nhập lại');
+        }
+    } while (n % 2 !== 0);
+    for (let i = 0; i < n; i++) {
+        let x = parseInt(prompt('Nhập vào đây một số bất kì'));
+        arr.push(x);
+    }
+    console.log(arr);
+    console.log(checkArray(arr));
+
+</script>
+</body>
+</html>

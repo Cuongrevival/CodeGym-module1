@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sự đối xứng của dãy số</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let n = parseInt(prompt('Nhập vào đây kích thước của dãy số'));
+    for (let i = 0; i < n; i++) {
+        let x = parseInt(prompt('Nhập vào đây một số bất kỳ'));
+        arr.push(x);
+    }
+    console.log(arr);
+    console.log(doiXung(arr));
+
+    function doiXung(arr) {
+        let check = '';
+        for (let i = 0; i < arr.length / 2; i++) {
+            if (arr[i] !== arr[arr.length - 1 - i]) {
+                check = 'NO';
+            } else {
+                check = 'OK';
+            }
+        }
+        return check;
+    }
+</script>
+</body>
+</html>

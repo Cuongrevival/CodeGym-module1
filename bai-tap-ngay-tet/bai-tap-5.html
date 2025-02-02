@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm số lớn nhất</title>
+</head>
+<body>
+<script>
+    function findMaxNumber(n) {
+
+        if (n.toString().length < 4) {
+            console.log(-1);
+        } else {
+            let x = []
+            let m = n.toString();
+            for (let i = 0; i < m.length; i++) {
+                let k = m.slice(0, i) + m.slice(i + 1);
+                x.push(k);
+            }
+            let max = x[0];
+            for (let j = 0; j < x.length; j++) {
+                if (x[j] > max) {
+                    max = x[j];
+                }
+            }
+            console.log(max);
+        }
+    }
+
+    let a = parseInt(prompt('Nhập vào đây một số có 4 chữ số'));
+    findMaxNumber(a);
+</script>
+</body>
+</html>

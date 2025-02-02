@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phân số tối giản</title>
+</head>
+<body>
+<script>
+    function GCD(m, n) {
+        let temp = 0;
+        while (n !== 0) {
+            temp = n;
+            n = m % n;
+            m = temp;
+        }
+        return m;
+    }
+
+    function find(x) {
+        if (typeof x !== 'string') {
+            return 'Không phải là phân số';
+        } else {
+            let parts = x.split('/');
+            if (parts.length !== 2) {
+                return "Không phải là phân số";
+            }
+            const [a, b] = parts.map(Number);
+            if (Number.isInteger(a) && Number.isInteger(b) && b !== 0) {
+                if(a % b === 0) {
+                    return a / b;
+                }else{
+                return `${a / GCD(a, b)} / ${b / GCD(a, b)};`
+                }
+            }
+            return 'Không phải là phân số';
+        }
+    }
+
+    let m = prompt('Nhập vào đây một phân số');
+    console.log(find(m));
+</script>
+</body>
+</html>

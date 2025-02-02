@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra nguyên âm</title>
+</head>
+<body>
+<script>
+    function checkVowel(str) {
+        let vowels = 'aieouAIEOU';
+        let check = new Set();
+        for (let char of str) {
+            if (vowels.includes(char)) {
+                check.add(char.toLowerCase());
+            }
+        }
+        return Array.from(check);
+    }
+
+    let n = prompt(`Nhập vào đây một từ, một cụm từ, hay một câu bất kì`);
+    console.log(checkVowel(n));
+</script>
+</body>
+</html>
