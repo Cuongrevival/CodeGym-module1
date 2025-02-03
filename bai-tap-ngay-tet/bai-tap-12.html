@@ -3,6 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        body {
+            text-align: center;
+            justify-content: center;
+        }
+
+        table {
+            border: 1px solid;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        h2 {
+            text-align: center;
+            font-family: "Candara Light", sans-serif;
+        }
+
+        th, td {
+            border: 1px solid;
+            padding: 8px;
+            text-align: left;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+
+        }
+
+        button:hover {
+            opacity: 0.8;
+            background-color: #ff6600;
+        }
+    </style>
 </head>
 <body>
 <h2>Thông tin quản lí học viên</h2>
@@ -13,19 +52,23 @@
     <thead>
     <tr>
         <th>Mã học viên</th>
-        <th></th>
         <th>Tên</th>
-        <th></th>
-        <th>Lớp</th>
-        <th></th>
         <th>Email</th>
-        <th></th>
+        <th>Lớp</th>
         <th>Ngày sinh</th>
-        <th></th>
         <th>Module</th>
     </tr>
+<tr>
+    <td>HV-XXXX</td>
+    <td>Nguyễn Văn A</td>
+    <td>a@gmail.com</td>
+    <td>CVxxxxx</td>
+    <td>DD/MM/YYYY</td>
+    <td>2</td>
+</tr>
     </thead>
-    <tbody id="manageStudents"></tbody>
+    <tbody id="manageStudents">
+    </tbody>
 </table>
 <script>
     let students = [];
@@ -36,72 +79,85 @@
         students.forEach(student => {
             studentBoard.innerHTML += `<tr>
     <td>${student.id}</td>
-    <td></td>
+
     <td>${student.name}</td>
-    <td></td>
+
     <td>${student.email}</td>
-    <td></td>
+
     <td>${student.class}</td>
-    <td></td>
+
     <td>${student.birthdate}</td>
-    <td></td>
+
     <td>${student.module}</td>
   <tr>`
         });
     }
 
     function validateID(id) {
-        return /^HV-\d{4}/.test(id);
+        return /^HV-\d{4}/.test(id)
     }
+
     function validateModule(module) {
         return module >= 1 && module <= 6;
     }
+
     function validateDate(date) {
         return /^\d{2}\/\d{2}\/\d{4}$/.test(date);
     }
+
     function addStudent() {
-        let id =prompt('Nhập mã học viên');
-        if(!validateID(id)) {
+        let id = prompt('Nhập mã học viên');
+        if (!validateID(id)) {
             return alert('Mã học viên không phù hợp, vui lòng nhập lại');
         }
         let name = prompt('Nhập tên học viên');
-        if(name.length > 50) {
+        if (name.length > 50) {
             return alert('Tên học viên không được phép quá 50 ký tự');
         }
         let studentClass = prompt('Nhập vào đây lớp học của học viên')
         let email = prompt('Nhập email của học viên');
         let birthdate = prompt('Nhập ngày tháng năm sinh:');
-        if(!validateDate(birthdate)) {
+        if (!validateDate(birthdate)) {
             return alert('Ngày tháng không phù hợp');
         }
         let module = prompt('Nhập vào đây module đang học');
-        if(!validateModule(module)) {
+        if (!validateModule(module)) {
             return alert('Không có module này');
         }
         students.push({id, name, class: studentClass, email, birthdate, module});
         studentManagement();
     }
+
     function editStudent() {
         let id = prompt('Nhập mã học viên cần sửa');
-        let student = students.find(student => student.id === id);
-        if(!student) {
+        let student = students.find(s => s.id === id);
+        if (!student) {
             return alert('Không có học viên này');
         }
         student.name = prompt('Nhập tên học viên mới', student.name);
         student.class = prompt('Nhập lớp mới:', student.class);
         student.email = prompt('Nhập email mới mà học viên này cung cấp', student.email);
-        student.module = prompt('Nhập module của học viên này', student.module);
-        student.birthdate = prompt('Nhập vào đây ngày tháng năm sinh của học viên mới', student.birthdate);
+        let birthdate = prompt("Nhập ngày sinh mới (dd/mm/yyyy):", student.birthdate);
+        if (!validateDate(birthdate)) {
+            return alert("Ngày sinh không đúng định dạng!");
+        }
+        student.birthdate = birthdate;
+        let module = parseInt(prompt("Nhập module mới (1-6):", student.module));
+        if (!validateModule(module)) {
+            return alert("Module chỉ được nhập từ 1-6!");
+        }
+        student.module = module;
         studentManagement();
     }
+
     function deleteStudent() {
         let id = prompt('Nhập vào đây mã học viên cần xoá');
-        let student = students.find(student => student.id === id);
-        if(!student) {
+        let index = students.findIndex(s => s.id === id);
+        if (index === -1) {
             return alert('Không có học viên này');
         }
-        if(confirm('Bạn có chắc muốn xoá học viên này không?')){
-            student.splice(id, 1);
+        if (confirm('Bạn có chắc muốn xoá học viên này không?')) {
+            students.splice(index, 1);
             studentManagement();
         }
     }
