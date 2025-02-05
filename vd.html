@@ -1,10 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Funny Circle</title>
 </head>
 <body>
-$END$
+<canvas id="myCanvas" width="1300px" height="1165px" style="border: 1px solid black"></canvas>
+<script>
+    function Circle(x, y, radius) {
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+        this.dx = (Math.random() - 0.5) * 5; // Tốc độ ngẫu nhiên (-2.5 đến 2.5)
+        this.dy = (Math.random() - 0.5) * 5;
+        this.color = getRandomColor(); // Màu sắc ngẫu nhiên
+    }
+
+    function getRandomHex(){
+        return Math.floor(Math.random() * 255);
+    }
+
+    function getRandomColor(){
+        let red = getRandomHex();
+        let green = getRandomHex();
+        let blue = getRandomHex();
+        return "rgb(" + red + "," + green + "," + blue + ")";
+    }
+
+    function drawCircle(circle, ctx) {
+        ctx.beginPath();
+        ctx.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2);
+        ctx.fillStyle = circle.color;
+        ctx.fill();
+    }
+
+    function drawManyCircle() {
+        let canvas = document.getElementById("myCanvas");
+        let ctx = canvas.getContext("2d");
+        let circles = [];
+
+        // Tạo 100 vòng tròn ban đầu
+        for (let i = 0; i < 100; i++) {
+            let radius = Math.floor(Math.random() * 100);
+            let x = Math.random() * canvas.width;
+            let y = Math.random() * canvas.height;
+            let circle = new Circle(x, y, radius);
+            circles.push(circle);
+        }
+
+        function updateCircles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Xóa canvas
+
+            for (let circle of circles) {
+
+                if (circle.x + circle.radius > canvas.width || circle.x - circle.radius < 0) {
+                    circle.dx = -circle.dx; // Đổi hướng theo trục x
+                }
+                if (circle.y + circle.radius > canvas.height || circle.y - circle.radius < 0) {
+                    circle.dy = -circle.dy; // Đổi hướng theo trục y
+                }
+
+
+                circle.x += circle.dx;
+                circle.y += circle.dy;
+
+
+                drawCircle(circle, ctx);
+            }
+
+            requestAnimationFrame(updateCircles); // Lặp lại để tạo hiệu ứng
+        }
+
+        updateCircles(); // Bắt đầu hiệu ứng
+    }
+
+    drawManyCircle(); // Gọi hàm vẽ và bắt đầu hiệu ứng
+</script>
 </body>
 </html>

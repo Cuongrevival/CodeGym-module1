@@ -7,14 +7,13 @@
 <body>
 <input type="number" id="number" oninput="squareUp()">
 <label for="number"></label>
-<p id="result" ></p>
+<p id="result"></p>
 <script>
     function squareUp() {
-       let n = document.getElementById("number").value;
-       let s = n * n;
-       document.getElementById("result").innerHTML = `${s}`;
+        let n = document.getElementById("number").value;
+        let s = n * n;
+        document.getElementById("result").innerHTML = `${s}`;
     }
-
 
 
 </script>

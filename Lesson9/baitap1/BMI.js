@@ -3,13 +3,13 @@ function myBMI() {
     let height=document.getElementById("myHeight").value;
     let BMI=weight/(height*height);
     if (BMI < 18.5) {
-        document.write("UnderWeight");
+        document.getElementById("myBMI").innerHTML= "UnderWeight";
     } else if (BMI < 25.0) {
-        document.write("Normal");
+        document.getElementById("myBMI").innerHTML= "Normal";
     } else if (BMI < 30.0) {
-        document.write("Overweight");
+        document.getElementById("myBMI").innerHTML= "Overweight";
     } else {
-        document.write("Obese");
-        console.log(BMI);
+        document.getElementById("myBMI").innerHTML= "Obese";
+
     }
 }

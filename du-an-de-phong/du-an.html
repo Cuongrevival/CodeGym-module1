@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Language Transfer</title>
+    <link rel="stylesheet" href="language.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="countries.js"></script>
+    <script src ="language.js" defer></script>
+</head>
+<body>
+<div class="container">
+    <p>Translation website</p>
+    <div class="wrapper">
+        <div class="text-input">
+
+            <label>
+                <textarea class="from-text" placeholder="Enter your text here"></textarea>
+            </label>
+            <label>
+                <textarea class="to-text" placeholder="Translation" readonly disabled></textarea>
+            </label>
+        </div>
+        <ul class="controls">
+            <li class="row from">
+                <div class="icons">
+                    <i id="from1" class="fas fa-volume-up"></i>
+                    <i id="from" class="fas fa-copy"></i>
+                </div>
+
+                <label>
+                    <select>
+                        <option value="en-US">English</option>
+                        <option value="hi-IN">Hindi</option>
+                        <option value="ne-NP">Nepali</option>
+                    </select>
+                </label>
+
+            </li>
+            <li class="exchange"><i class="fas fa-exchange-alt"></i></li>
+            <li class="row to">
+                <label>
+                    <select>
+                        <option value="hi-IN">Hindi</option>
+                        <option value="ne-NP">Nepali</option>
+                        <option value="en-US">English</option>
+                    </select>
+                </label>
+                <div class="icons">
+                    <i id="to1" class="fas fa-volume-up"></i>
+                    <i id="to" class="fas fa-copy"></i>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <button>Translate</button>
+</div>
+</body>
+</html>

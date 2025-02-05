@@ -3,19 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        input{
+            width: 100px;
+            border: 1px solid black;
+        }
+        button{
+        background-color: red;
+            color: white;
+        }
+    </style>
 </head>
 <body>
 <h1>Calculator</h1>
-  <input type="number" id="firstnumber">
-  <input type="number" id="secondnumber">
-  <button type="submit" onclick="addition()">+</button>
-  <button type="submit" onclick="substraction()">-</button>
-  <button type="submit" onclick="multiply()">*</button>
-  <button type="submit" onclick="division()">/</button>
-  <p id="add"></p>
-  <p id="sub"></p>
-  <p id="mul"></p>
-  <p id="div"></p>
+<div class="input">
+<input type="number" id="firstNumber">
+<label for="firstNumber"></label>
+<input type="number" id="secondNumber">
+<label for="secondNumber"></label>
+</div>
+<div class="button">
+    <button type="submit" onclick="addition()">addition(+)</button>
+    <button type="submit" onclick="substraction()">substraction(-)</button>
+    <button type="submit" onclick="multiply()">multiplication(*)</button>
+    <button type="submit" onclick="division()">division(/)</button>
+</div>
+<p id="add"></p>
+<p id="sub"></p>
+<p id="mul"></p>
+<p id="div"></p>
 
 </body>
 </html>

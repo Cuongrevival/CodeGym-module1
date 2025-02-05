@@ -11,21 +11,23 @@
 <input type="button" onclick="display()" id="btnDisplay" value="display">
 <p id="result">Result</p>
 <script>
-  let array = [];
-  let x=0;
-  function add(){
-    let value1 = document.getElementById("value").value;
-    array[x]= value1;
-    x++;
-    document.getElementById("value").value= '';
-  }
-  function display(){
-    let a =" ";
-    for (let i=0; i<array.length; i++){
-     a+= 'Element ' + i + ' : ' + array[i] + '<br>';
+    let array = [];
+    let x = 0;
+
+    function add() {
+        let value1 = document.getElementById("value").value;
+        array[x] = value1;
+        x++;
+        document.getElementById("value").value = '';
     }
-    document.getElementById("result").innerHTML = a;
-  }
+
+    function display() {
+        let a = " ";
+        for (let i = 0; i < array.length; i++) {
+            a += 'Element ' + i + ' : ' + array[i] + '<br>';
+        }
+        document.getElementById("result").innerHTML = a;
+    }
 </script>
 </body>
 </html>

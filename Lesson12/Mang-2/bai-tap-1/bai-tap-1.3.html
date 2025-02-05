@@ -6,21 +6,20 @@
 </head>
 <body>
 <script>
-    let str =window.prompt();
-    let x = 'ABCDEFGHIKLMNOPQRSTUVWXYZ'
-    let y = 'abcdefghiklmnopqrstuvwxyz'
-    let arr = [];
-    for (let i = 0; i < str.length; i++) {
-        if (x.indexOf(str[i]) !== -1) {
-            arr.push(str[i].toLowerCase());
-        } else if (y.indexOf(str[i]) !== -1) {
-            arr.push(str[i].toUpperCase());
-        } else {
-            arr.push(str[i]);
-        }
-
-    }
-    document.write(arr.join(''));
+   let string = window.prompt();
+   const a = 'abcdefghijklmnopqrstuvwxyz';
+   const b = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+   let result = [];
+ for (let i = 0; i < string.length; i++) {
+     if (a.indexOf(string.charAt(i)) !== -1) {
+         result.push(string.charAt(i).toUpperCase());
+     }else if (b.indexOf(string.charAt(i)) !== -1) {
+         result.push(string.charAt(i).toLowerCase());
+     } else{
+         result.push(string.charAt(i));
+     }
+ }
+ document.write(result.join(''));
 </script>
 </body>
 </html>

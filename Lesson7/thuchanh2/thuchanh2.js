@@ -1,5 +1,5 @@
-var height;
-var width;
+let height;
+let width;
 height =prompt("Enter height");
 width = prompt("Enter width");
 area = height *width;

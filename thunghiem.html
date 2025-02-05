@@ -5,13 +5,27 @@
     <title>Title</title>
 </head>
 <body>
-<p><a href = "#C4">This is Chapter 4</a></p>
-<p><a href = "#C6"> This is Chapter 6</a></p>
-<h1>Chapter 1:</h1>
-<h2>Chapter 2:</h2>
-<h3>Chapter 3:</h3>
-<h4 id="#C4">Chapter 4:</h4>
-<h5>Chapter 5:</h5>
-<h6 id="#C6">Chapter 6:</h6>
+<canvas id="myCanvas" width="500" height="300" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+    let x = 50;
+    let dx = 2; // Bước di chuyển
+
+    function draw() {
+
+        ctx = document.getElementById('myCanvas').getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height); // Xóa canvas
+
+        ctx.beginPath();
+        ctx.arc(x, 100, 20, 0, Math.PI * 2);
+        ctx.fillStyle = "blue";
+        ctx.fill();
+        ctx.closePath();
+
+        x += dx; // Cập nhật vị trí
+        requestAnimationFrame(draw); // Gọi lại hàm để tạo hiệu ứng chuyển động
+    }
+
+    draw(); // Bắt đầu animation
+</script>
 </body>
 </html>

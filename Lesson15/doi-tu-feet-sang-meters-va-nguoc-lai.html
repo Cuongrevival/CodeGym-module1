@@ -5,11 +5,16 @@
     <title>Title</title>
 </head>
 <body>
-<p><span><input type="number" id="foot" oninput="footToMeter()"></span> feet bằng <span id="meter" ></span> mét</p>
-<p><span><input type="number" id="meter2" oninput="meterToFoot()"></span>mét bằng <span id="foot2" ></span> feet</p>
+<p><span><input type="number" id="foot" oninput="footToMeter()"></span> feet
+    bằng <span id="meter"></span> mét</p>
+<label for="foot"></label>
+
+<p><span><input type="number" id="meter2" oninput="meterToFoot()"></span>mét
+    bằng <span id="foot2"></span> feet</p>
+<label for="meter2"></label>
 <script>
     function footToMeter() {
-        let f =document.getElementById("foot").value;
+        let f = document.getElementById("foot").value;
         let foot1 = parseFloat(f);
         document.getElementById("meter").innerHTML = foot1 * 0.305;
     }

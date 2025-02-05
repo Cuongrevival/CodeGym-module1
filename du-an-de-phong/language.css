@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #B7E1C1;
+}
+.container p{
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+.text-input textarea {
+    height: 250px;
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 18px;
+    border-radius: 5px;
+    background: none;
+    padding: 10px 15px;
+}
+
+.container {
+    width: 700px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.wrapper {
+    border-radius: 10px;
+    border: 1px solid #bbb;
+
+}
+
+.wrapper .text-input {
+    display: flex;
+    border-bottom: 1px solid #bbb;
+}
+.text-input .from-text {}
+
+.text-input .to-text {
+    border-left: 1px solid #bbbbbb;
+    border-radius: 0;
+}
+
+.controls, li, .icons {
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.controls {
+    list-style: none;
+    padding: 12px 15px;
+}
+
+.controls .icons {
+    width: 38%;
+
+}
+
+.controls .icons i {
+    width: 50px;
+    color: #999999;
+    font-size: 15px;
+    cursor: pointer;
+    justify-content: center;
+}
+.container button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    background: #53a5a6;
+    border-radius: 5px;
+}
+
+.controls .row .from .icons {
+    padding: 15px;
+    border-right: 1px solid #bbb;
+}
+
+.controls .row .to .icons {
+    padding: 15px;
+    border-right: 1px solid #bbb;
+}
+
+.controls .row select {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background: none;
+}
+
+.controls .exchange {
+    color: #999999;
+    font-size: 14px;
+    cursor: pointer;
+}

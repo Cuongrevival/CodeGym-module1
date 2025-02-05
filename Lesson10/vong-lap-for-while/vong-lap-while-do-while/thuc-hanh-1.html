@@ -6,11 +6,12 @@
 </head>
 <body>
 <script>
-    let num =parseInt(prompt("Enter a number"));
+    let num;
     let total = 0;
     while (num !== -1) {
 
         num = parseInt(prompt("Enter a number"));
+        document.write(num + "<br>");
         total += num;
     }
     document.write('Tổng tất cả các số mà bạn nhập ra: ' + total);
