@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trung bình cộng</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let n;
+    do {
+        n = parseInt(prompt(`Nhập vào đây kích thước của dãy số`));
+        if (n > 50) {
+            alert(`Dãy số quá lớn, yêu cầu nhập lại`);
+        }
+    } while (n > 50);
+    for (let i = 0; i < n; i++) {
+        let k = parseInt(prompt(`Nhập vào đây một số bất kì`));
+        arr.push(k);
+    }
+    console.log(arr);
+    let arr2 = [];
+    let average;
+    let sum = 0;
+    for (let x = 0; x < arr.length; x++) {
+        if (arr[x] % 3 === 0) {
+            sum += arr[x];
+            arr2.push(arr[x]);
+        }
+    }
+    average = sum / arr2.length;
+    console.log(average);
+</script>
+</body>
+</html>

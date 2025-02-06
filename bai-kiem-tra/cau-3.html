@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra ngày trong tháng của năm</title>
+</head>
+<body>
+<script>
+    function validateMonthAndYear(input) {
+        return /^(0?[1-9]|1[0-2])\/\d{4}$/.test(input);
+    }
+
+    function getDaysInMonth(month, year) {
+        const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+        if (month === 2 && ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0))) {
+            return 29;
+        }
+
+        return daysInMonth[month - 1];
+    }
+
+    let n;
+    do {
+        n = prompt('Nhập vào đây tháng và năm (MM/YYYY)');
+        if (validateMonthAndYear(n)) {
+            let [month, year] = n.split('/').map(Number);
+            let day = getDaysInMonth(month, year);
+            document.write(`Tháng và năm bạn vừa nhập có ${day} ngày`);
+        } else {
+            alert(`Yêu cầu bạn nhập lại`);
+        }
+    } while (!validateMonthAndYear(n));
+
+
+</script>
+</body>
+</html>
